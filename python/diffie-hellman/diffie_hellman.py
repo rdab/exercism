@@ -2,12 +2,12 @@ import random
 
 
 def private_key(p):
-    return random.randint(2, p-1)
+    return random.randrange(2, p)
 
 
 def public_key(p, g, private):
-    return (g ** private) % p
+    return pow(g, private, p)
 
 
 def secret(p, public, private):
-    return (public ** private) % p
+    return pow(public, private, p)
